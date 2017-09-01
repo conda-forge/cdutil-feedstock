@@ -1,5 +1,5 @@
 {% set name = "cdutil" %}
-{% set version = "2.10" %}
+{% set version = "2.12" %}
 
 package:
     name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
     url: https://github.com/UV-CDAT/cdutil/archive/v{{ version }}.tar.gz
-    sha256: f74c8f2d9ca547e8a925835486ea995775e99badf1d8fe24477554b32de2e733
+    sha256: 18d310eac5e71180c4d5952033a3a7359685534d3f4eb827e668cc02cecc9055
     
 
 build:
