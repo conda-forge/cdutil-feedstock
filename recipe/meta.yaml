@@ -27,7 +27,7 @@ requirements:
     - genutil
 
 test:
-  command:
+  commands:
     - export UVCDAT_ANONYMOUS_LOG=false && python run_tests.py -v2
 
 about:
