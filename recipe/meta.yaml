@@ -26,7 +26,7 @@ requirements:
     - genutil
 
 test:
-  command:
+  commands:
     - export UVCDAT_ANONYMOUS_LOG=false && python -c "import cdutil"
 
 about:
