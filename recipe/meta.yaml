@@ -1,18 +1,17 @@
 {% set name = "cdutil" %}
-{% set version = "2.12" %}
+{% set version = "3.0" %}
 
 package:
     name: {{ name|lower }}
     version: {{ version }}
 
 source:
-    url: https://github.com/UV-CDAT/cdutil/archive/v{{ version }}.tar.gz
-    sha256: 18d310eac5e71180c4d5952033a3a7359685534d3f4eb827e668cc02cecc9055
-    
+    url: https://github.com/UV-CDAT/cdutil/archive/master.tar.gz
+    sha256: a3cb57bcee0ab17d9d4100596d8f11d693d4f39708311c3a982239d27f6e54d5
 
 build:
   number: 0
-  skip: True  # [win or py3k]
+  skip: True  # [win]
   script: python setup.py install
 
 requirements:
@@ -28,7 +27,7 @@ requirements:
 
 test:
   command:
-    - export UVCDAT_ANONYMOUS_LOG=false && python run_tests.py -v2
+    - export UVCDAT_ANONYMOUS_LOG=false && python -c "import cdutil"
 
 about:
     home:  http://github.com/UV-CDAT/cdutil
