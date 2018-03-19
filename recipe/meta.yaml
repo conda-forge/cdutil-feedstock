@@ -6,8 +6,8 @@ package:
     version: {{ version }}
 
 source:
-    url: https://github.com/UV-CDAT/cdutil/archive/master.tar.gz
-    sha256: a3cb57bcee0ab17d9d4100596d8f11d693d4f39708311c3a982239d27f6e54d5
+    url: https://github.com/UV-CDAT/cdutil/archive/v3.0.tar.gz
+    sha256: 733cb7d95d5b5d8b9d0620cb9ffc3b33de8b6b38b70b5dea06e95c2b95b5a50b
 
 build:
   number: 0
