@@ -22,6 +22,7 @@ jobs:
       - run:
           # Run, test and (if we have a BINSTAR_TOKEN) upload the distributions.
           command: ./ci_support/run_docker_build.sh
+
   build__CONDA_PY_35:
     working_directory: ~/test
     machine: true
