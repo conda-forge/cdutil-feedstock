@@ -8,11 +8,10 @@ package:
 source:
     url: https://github.com/UV-CDAT/cdutil/archive/v{{ version }}.tar.gz
     sha256: 733cb7d95d5b5d8b9d0620cb9ffc3b33de8b6b38b70b5dea06e95c2b95b5a50b
-    
 
 build:
   number: 0
-  skip: True  # [win or py3k]
+  skip: True  # [win]
   script: python setup.py install
 
 requirements:
@@ -27,8 +26,8 @@ requirements:
     - genutil
 
 test:
-  command:
-    - export UVCDAT_ANONYMOUS_LOG=false && python run_tests.py -v2
+  commands:
+    - export UVCDAT_ANONYMOUS_LOG=false && python -c "import cdutil"
 
 about:
     home:  http://github.com/UV-CDAT/cdutil
