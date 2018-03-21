@@ -1,5 +1,5 @@
 {% set name = "cdutil" %}
-{% set version = "3.0" %}
+{% set version = "8.0" %}
 
 package:
     name: {{ name|lower }}
