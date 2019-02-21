@@ -24,6 +24,7 @@ requirements:
     - python
     - cdms2
     - genutil
+    - cdat_info >=8.1
 
 test:
   commands:
