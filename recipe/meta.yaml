@@ -1,6 +1,9 @@
+{% set name = "cdutil" %}
+{% set version = "8.1" %}
+
 package:
     name: cdutil
-    version: 8.1
+    version: {{ version }}
 
 source:
     url: https://github.com/CDAT/cdutil/archive/v{{ version }}.tar.gz
@@ -10,18 +13,14 @@ source:
 build:
   number: 0
   noarch: python
+  skip: True  # [win]
   script: python setup.py install
 
-test:
-  command:
-    - export CDAT_ANONYMOUS_LOG=false && python -c "import cdutil"
-
-
- 
 requirements:
   build:
     - python
     - setuptools
+    - cdat_info
   run:
     - python
     - cdms2
@@ -32,8 +31,11 @@ about:
     summary: A set of tools to manipulate climate data
     license: BSD
     license_file: bsd-3-clause.txt
+test:
+  commands:
+    - export CDAT_ANONYMOUS_LOG=false && python -c "import cdutil"
 
--extra:
+extra:
   recipe-maintainers:
     - dnadeau4
     - doutriaux1
