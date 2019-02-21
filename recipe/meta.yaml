@@ -25,6 +25,7 @@ requirements:
     - cdms2
     - genutil
     - cdat_info >=8.1
+    - libcurl >=7.64.0
 
 test:
   commands:
