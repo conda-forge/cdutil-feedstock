@@ -1,20 +1,17 @@
-{% set name = "cdutil" %}
-{% set version = "2.12" %}
-
 package:
-    name: {{ name|lower }}
-    version: {{ version }}
+    name: cdutil
+    version: 8.1
 
 source:
-    url: https://github.com/UV-CDAT/cdutil/archive/v{{ version }}.tar.gz
-    sha256: 18d310eac5e71180c4d5952033a3a7359685534d3f4eb827e668cc02cecc9055
-    
+    url: https://github.com/CDAT/cdutil/archive/v{{ version }}.tar.gz
+    sha256: 37d3dfa2202cab4e42a9c04cb1956dffe2146c5594fed04f6c32c91554c84b53
+
 
 build:
   number: 0
-  skip: True  # [win or py3k]
+  noarch: python
   script: python setup.py install
-
+ 
 requirements:
   build:
     - python
@@ -22,21 +19,11 @@ requirements:
   run:
     - python
     - cdms2
-    - numpy
-    - udunits2
     - genutil
 
-test:
-  command:
-    - export UVCDAT_ANONYMOUS_LOG=false && python run_tests.py -v2
-
 about:
-    home:  http://github.com/UV-CDAT/cdutil
-    license: 'CCLRC'
-    license_file: LICENSE
-    summary: 'Climate Data Related Utitilites for the Community Data Analysis Tools'
+    home:  http://github.com/CDAT/cdutil
+    summary: A set of tools to manipulate climate data
+    license: BSD
+    license_file: bsd-3-clause.txt
 
-extra:
-  recipe-maintainers:
-    - dnadeau4
-    - doutriaux1
