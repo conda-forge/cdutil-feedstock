@@ -13,7 +13,7 @@ source:
 build:
   number: 0
   noarch: python
-  skip: True  # [win]
+  #  skip: True  # [win]
   script: python setup.py install
 
 requirements:
@@ -26,17 +26,17 @@ requirements:
     - cdms2
     - genutil
 
+test:
+  commands:
+    - export CDAT_ANONYMOUS_LOG=false && python -c "import cdutil"
+
 about:
     home:  http://github.com/CDAT/cdutil
     summary: A set of tools to manipulate climate data
     license: BSD
     license_file: bsd-3-clause.txt
-test:
-  commands:
-    - export CDAT_ANONYMOUS_LOG=false && python -c "import cdutil"
 
 extra:
   recipe-maintainers:
     - dnadeau4
     - doutriaux1
-
