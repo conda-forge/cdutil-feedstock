@@ -19,13 +19,12 @@ requirements:
   build:
     - python
     - setuptools
-    - cdat_info
+    - cdat_info >=8.1
   run:
     - python
     - cdms2
-    - genutil
+    - genutil >=8.1.1
     - cdat_info >=8.1
-    - libcurl >=7.64.0
 
 test:
   commands:
