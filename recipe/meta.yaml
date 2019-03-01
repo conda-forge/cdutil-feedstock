@@ -7,11 +7,11 @@ package:
 
 source:
     url: https://github.com/CDAT/cdutil/archive/v{{ version }}.tar.gz
-    sha256: 37d3dfa2202cab4e42a9c04cb1956dffe2146c5594fed04f6c32c91554c84b53
+    sha256: 20ea2870902fb0eeefe54fb49294e6707c555dd75a3b797d622357b2073a297a
 
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: python setup.py install
 
