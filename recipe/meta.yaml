@@ -9,7 +9,6 @@ source:
     url: https://github.com/CDAT/cdutil/archive/v{{ version }}.tar.gz
     sha256: 9c28ddce4cf4e3a84b1e8ca52198e07630c80a9353e951d6253971f115346c28
 
-
 build:
   number: 0
   noarch: python
