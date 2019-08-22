@@ -1,5 +1,5 @@
 {% set name = "cdutil" %}
-{% set version = "8.1" %}
+{% set version = "8.2" %}
 
 package:
     name: cdutil
@@ -7,7 +7,7 @@ package:
 
 source:
     url: https://github.com/CDAT/cdutil/archive/v{{ version }}.tar.gz
-    sha256: 37d3dfa2202cab4e42a9c04cb1956dffe2146c5594fed04f6c32c91554c84b53
+    sha256: 9c28ddce4cf4e3a84b1e8ca52198e07630c80a9353e951d6253971f115346c28
 
 
 build:
@@ -19,12 +19,10 @@ requirements:
   build:
     - python
     - setuptools
-    - cdat_info >=8.1
   run:
     - python
     - cdms2
-    - genutil >=8.1.1
-    - cdat_info >=8.1
+    - genutil
 
 test:
   commands:
@@ -40,3 +38,5 @@ extra:
   recipe-maintainers:
     - dnadeau4
     - doutriaux1
+    - downiec
+    - muryanto1
