@@ -1,7 +1,3 @@
-<!--
-# -*- mode: jinja -*-
--->
-
 About cdutil
 ============
 
@@ -18,8 +14,15 @@ Summary: A set of tools to manipulate climate data
 Current build status
 ====================
 
-All platforms:
-[![noarch](https://img.shields.io/circleci/project/github/conda-forge/cdutil-feedstock/master.svg?label=noarch)](https://circleci.com/gh/conda-forge/cdutil-feedstock)
+
+<table><tr><td>All platforms:</td>
+    <td>
+      <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3809&branchName=master">
+        <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/cdutil-feedstock?branchName=master">
+      </a>
+    </td>
+  </tr>
+</table>
 
 Current release info
 ====================
@@ -115,4 +118,6 @@ Feedstock Maintainers
 
 * [@dnadeau4](https://github.com/dnadeau4/)
 * [@doutriaux1](https://github.com/doutriaux1/)
+* [@downiec](https://github.com/downiec/)
+* [@muryanto1](https://github.com/muryanto1/)
 
