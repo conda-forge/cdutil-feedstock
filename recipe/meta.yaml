@@ -1,5 +1,5 @@
 {% set name = "cdutil" %}
-{% set version = "8.1" %}
+{% set version = "8.2" %}
 
 package:
     name: cdutil
@@ -7,11 +7,11 @@ package:
 
 source:
     url: https://github.com/CDAT/cdutil/archive/v{{ version }}.tar.gz
-    sha256: 20ea2870902fb0eeefe54fb49294e6707c555dd75a3b797d622357b2073a297a
+    sha256: 9c28ddce4cf4e3a84b1e8ca52198e07630c80a9353e951d6253971f115346c28
 
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: python setup.py install
 
