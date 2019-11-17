@@ -11,13 +11,14 @@ source:
 
 
 build:
-  number: 0
+  number: 1
   noarch: python
-  script: python setup.py install
+  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
 
 requirements:
-  build:
+  host:
     - python
+    - pip
     - setuptools
     - cdat_info >=8.1
   run:
@@ -31,7 +32,7 @@ test:
     - export CDAT_ANONYMOUS_LOG=false && python -c "import cdutil"
 
 about:
-    home:  http://github.com/CDAT/cdutil
+    home: http://github.com/CDAT/cdutil
     summary: A set of tools to manipulate climate data
     license: BSD
     license_file: bsd-3-clause.txt
@@ -40,3 +41,7 @@ extra:
   recipe-maintainers:
     - dnadeau4
     - doutriaux1
+    - xylar
+    - downiec
+    - muryanto1
+    - jasonb5
