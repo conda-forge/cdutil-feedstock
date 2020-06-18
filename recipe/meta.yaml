@@ -1,5 +1,5 @@
 {% set name = "cdutil" %}
-{% set version = "8.2" %}
+{% set version = "8.2.1.rc1" %}
 
 package:
     name: cdutil
@@ -7,8 +7,7 @@ package:
 
 source:
     url: https://github.com/CDAT/cdutil/archive/v{{ version }}.tar.gz
-    sha256: 9c28ddce4cf4e3a84b1e8ca52198e07630c80a9353e951d6253971f115346c28
-
+    sha256: a1e70f8f0ca47f8a17ee20b86c21825e6353989382c1584c14fe12b9569821bb
 
 build:
   number: 2
@@ -20,16 +19,16 @@ requirements:
     - python
     - pip
     - setuptools
-    - cdat_info >=8.1
+    - cdat_info
   run:
     - python
     - cdms2
-    - genutil >=8.1.1
-    - cdat_info >=8.1
+    - genutil
+    - cdat_info
 
 test:
   commands:
-    - export CDAT_ANONYMOUS_LOG=false && python -c "import cdutil"
+    - python -c "import cdutil"
 
 about:
     home: http://github.com/CDAT/cdutil
