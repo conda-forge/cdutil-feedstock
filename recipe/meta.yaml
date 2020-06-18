@@ -10,7 +10,7 @@ source:
     sha256: a1e70f8f0ca47f8a17ee20b86c21825e6353989382c1584c14fe12b9569821bb
 
 build:
-  number: 2
+  number: 0
   noarch: python
   script: python setup.py install
 
