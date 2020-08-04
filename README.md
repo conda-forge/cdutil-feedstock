@@ -3,9 +3,9 @@ About cdutil
 
 Home: http://github.com/CDAT/cdutil
 
-Package license: BSD
+Package license: BSD-3-Clause
 
-Feedstock license: BSD 3-Clause
+Feedstock license: BSD-3-Clause
 
 Summary: A set of tools to manipulate climate data
 
