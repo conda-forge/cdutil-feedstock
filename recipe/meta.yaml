@@ -1,5 +1,5 @@
 {% set name = "cdutil" %}
-{% set version = "8.2.1.rc1" %}
+{% set version = "8.2.1" %}
 
 package:
     name: cdutil
@@ -7,7 +7,7 @@ package:
 
 source:
     url: https://github.com/CDAT/cdutil/archive/v{{ version }}.tar.gz
-    sha256: a1e70f8f0ca47f8a17ee20b86c21825e6353989382c1584c14fe12b9569821bb
+    sha256: 9e02348ae0e9148c6b0b9391b208adf9be7d97e0da30b88518c02dfc1e07d2bf
 
 build:
   number: 0
@@ -33,7 +33,7 @@ test:
 about:
     home: http://github.com/CDAT/cdutil
     summary: A set of tools to manipulate climate data
-    license: BSD
+    license: BSD-3-Clause
     license_file: bsd-3-clause.txt
 
 extra:
