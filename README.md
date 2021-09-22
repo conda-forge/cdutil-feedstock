@@ -5,11 +5,9 @@ Home: http://github.com/CDAT/cdutil
 
 Package license: BSD-3-Clause
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/cdutil-feedstock/blob/master/LICENSE.txt)
 
 Summary: A set of tools to manipulate climate data
-
-
 
 Current build status
 ====================
@@ -38,6 +36,7 @@ Installing `cdutil` from the `conda-forge` channel can be achieved by adding `co
 
 ```
 conda config --add channels conda-forge
+conda config --set channel_priority strict
 ```
 
 Once the `conda-forge` channel has been enabled, `cdutil` can be installed with:
@@ -108,9 +107,9 @@ build distinct package versions.
 
 In order to produce a uniquely identifiable distribution:
  * If the version of a package **is not** being increased, please add or increase
-   the [``build/number``](https://conda.io/docs/user-guide/tasks/build-packages/define-metadata.html#build-number-and-string).
+   the [``build/number``](https://docs.conda.io/projects/conda-build/en/latest/resources/define-metadata.html#build-number-and-string).
  * If the version of a package **is** being increased, please remember to return
-   the [``build/number``](https://conda.io/docs/user-guide/tasks/build-packages/define-metadata.html#build-number-and-string)
+   the [``build/number``](https://docs.conda.io/projects/conda-build/en/latest/resources/define-metadata.html#build-number-and-string)
    back to 0.
 
 Feedstock Maintainers
@@ -120,6 +119,5 @@ Feedstock Maintainers
 * [@doutriaux1](https://github.com/doutriaux1/)
 * [@downiec](https://github.com/downiec/)
 * [@jasonb5](https://github.com/jasonb5/)
-* [@muryanto1](https://github.com/muryanto1/)
 * [@xylar](https://github.com/xylar/)
 
