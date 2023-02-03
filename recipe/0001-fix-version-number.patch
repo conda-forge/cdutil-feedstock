@@ -1,0 +1,36 @@
+diff -ruN cdutil-8.2.1/setup.py cdutil-8.2.1-patch/setup.py
+--- cdutil-8.2.1/setup.py	2020-07-17 15:17:48.000000000 -0600
++++ cdutil-8.2.1-patch/setup.py	2023-02-03 00:46:14.252556800 -0700
+@@ -1,29 +1,14 @@
+ from setuptools import setup, find_packages
+-from subprocess import Popen, PIPE
+ 
+ 
+-Version = "8.0"
+-p = Popen(
+-    ("git",
+-     "describe",
+-     "--tags"),
+-    stdin=PIPE,
+-    stdout=PIPE,
+-    stderr=PIPE)
+-try:
+-    descr = p.stdout.readlines()[0].strip().decode("utf-8")
+-    Version = "-".join(descr.split("-")[:-2])
+-    if Version == "":
+-        Version = descr
+-except:
+-    descr = Version
++Version = "8.2.1"
+ 
+ setup (name = "cdutil",
+        author="AIMS Software Team",
+-       version=descr,
++       version=Version,
+        description = "Utilities for climate data manipulation",
+        url = "http://cdat.sourceforge.net",
+        packages = find_packages(),
+        data_files = [ ("share/cdutil",("data/sftbyrgn.nc","data/navy_land.nc","share/test_data_files.txt"))],
+       )
+-    
++
