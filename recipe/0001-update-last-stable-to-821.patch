@@ -1,0 +1,36 @@
+From 048b40bd4c2fdf4fe0c6b153750f56e669810aaa Mon Sep 17 00:00:00 2001
+From: Muryanto <muryanto1@md-9776485.llnl.gov>
+Date: Tue, 3 Nov 2020 10:53:20 -0800
+Subject: [PATCH] update last_stable to 8.2.1
+
+---
+ Makefile | 2 +-
+ setup.py | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/Makefile b/Makefile
+index dfc6237..83e6ef4 100644
+--- a/Makefile
++++ b/Makefile
+@@ -13,7 +13,7 @@ label ?= nightly
+ build_script = conda-recipes/build_tools/conda_build.py
+ 
+ test_pkgs = testsrunner coverage coveralls
+-last_stable ?= 8.2
++last_stable ?= 8.2.1
+ 
+ conda_build_env ?= build-$(pkg_name)
+ conda_test_env ?= test-$(pkg_name)
+diff --git a/setup.py b/setup.py
+index 79b415e..01e0373 100755
+--- a/setup.py
++++ b/setup.py
+@@ -2,7 +2,7 @@
+ from subprocess import Popen, PIPE
+ 
+ 
+-Version = "8.0"
++Version = "8.2.1"
+ p = Popen(
+     ("git",
+      "describe",
