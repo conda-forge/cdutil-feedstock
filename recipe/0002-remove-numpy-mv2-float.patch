@@ -1,0 +1,127 @@
+diff -ruN cdutil-8.2.1/cdutil/times.py cdutil-8.2.1-patch/cdutil/times.py
+--- cdutil-8.2.1/cdutil/times.py	2020-07-17 15:17:48.000000000 -0600
++++ cdutil-8.2.1-patch/cdutil/times.py	2023-02-15 12:50:08.626795122 -0700
+@@ -33,9 +33,9 @@
+     n = len(coords)
+     mask = numpy.ma.getmask(msk)
+     if mask is None:
+-        msk = numpy.zeros(msk.shape, numpy.float)
++        msk = numpy.zeros(msk.shape, float)
+     else:
+-        msk = mask.astype(numpy.float)
++        msk = mask.astype(float)
+     sw = 0.
+     for i in range(n):
+         w = float(coords[i][1] - coords[i][0])  # width
+@@ -84,7 +84,7 @@
+         coords = s.getAxis(0).getBounds()
+     n = len(coords)
+     length = float(bounds[1] - bounds[0])
+-    nax = numpy.zeros((n, 2), numpy.float)
++    nax = numpy.zeros((n, 2), float)
+     for i in range(n):
+         nax[i][0] = coords[i][0] / length * 2. * numpy.pi
+         nax[i][1] = coords[i][1] / length * 2. * numpy.pi
+@@ -274,10 +274,10 @@
+     # Now create the big array that will be the merged
+     sh = list(ds[0].shape)
+     sh[0] = nt
+-    out = numpy.ma.zeros(tuple(sh), MV2.float)
++    out = numpy.ma.zeros(tuple(sh), float)
+     # bounds array
+-    bnds = numpy.zeros((nt, 2), MV2.float)
+-    fvals = numpy.zeros((nt), MV2.float)
++    bnds = numpy.zeros((nt, 2), float)
++    fvals = numpy.zeros((nt), float)
+     if statusbar is not None:
+         import genutil
+         prev = 0
+@@ -504,8 +504,8 @@
+             out.setAxis(i, slab.getAxis(i))
+         # Time axis
+         n = len(slices)
+-        vals = numpy.zeros((n), MV2.float)  # time values
+-        bnds = numpy.zeros((n, 2), MV2.float)  # time bounds
++        vals = numpy.zeros((n), float)  # time values
++        bnds = numpy.zeros((n, 2), float)  # time bounds
+         # Retrieve the bounds
+         sh = out.shape
+         for i in range(sh[0]):
+@@ -612,13 +612,13 @@
+         n = len(slices)
+         sh = list(slab.shape)
+         sh[0] = n
+-        out = numpy.ma.zeros(sh, dtype=numpy.float)
+-        wout = numpy.ma.ones(sh, dtype=numpy.float)
++        out = numpy.ma.zeros(sh, dtype=float)
++        wout = numpy.ma.ones(sh, dtype=float)
+         for i in range(n):
+             self.statusbar1(i, n, statusbar)
+             sub = slices[i]
+             sh[0] = len(sub)
+-            msk = numpy.ma.ones(sh, dtype=numpy.float)
++            msk = numpy.ma.ones(sh, dtype=float)
+             subb = bounds[i]
+             nrm = norm[i][0]
+ # print sub,subb,nrm,'are subb, nrm',len(sub),sum
+@@ -632,7 +632,7 @@
+ # print j,w
+                 m = numpy.ma.getmask(slab[sub[j]])
+                 if m is not None:
+-                    msk[j] = msk[j] * (1. - m.astype(MV2.float)) * w
++                    msk[j] = msk[j] * (1. - m.astype(float)) * w
+                 else:
+                     msk[j] = msk[j] * w
+             if len(sub) > 1:
+@@ -1109,7 +1109,7 @@
+     units = tim.units
+     timc = tim.asComponentTime()
+     n = len(tim)
+-    bnds = numpy.zeros((n, 2), numpy.float)
++    bnds = numpy.zeros((n, 2), float)
+     frequency = int(frequency)
+     for i in range(n):
+         t = timc[i]
+@@ -1181,7 +1181,7 @@
+     units = tim.units
+     timc = tim.asComponentTime()
+     n = len(tim)
+-    bnds = numpy.zeros((n, 2), numpy.float)
++    bnds = numpy.zeros((n, 2), float)
+     for i in range(n):
+         t = timc[i]
+         d = t.day
+@@ -1243,7 +1243,7 @@
+     units = tim.units
+     timc = tim.asComponentTime()
+     n = len(tim)
+-    bnds = numpy.zeros((n, 2), numpy.float)
++    bnds = numpy.zeros((n, 2), float)
+     for i in range(n):
+         t = timc[i]
+         y = t.year
+@@ -1533,9 +1533,9 @@
+         sh = list(slab.shape)
+         nseason = len(self.seasons)
+         sh[0] = nseason
+-        s = numpy.ma.zeros(sh, MV2.float)
+-        vals = numpy.zeros(nseason, MV2.float)
+-        bnds = numpy.zeros((nseason, 2), MV2.float)
++        s = numpy.ma.zeros(sh, float)
++        vals = numpy.zeros(nseason, float)
++        bnds = numpy.zeros((nseason, 2), float)
+         tim = slab.getTime()
+         for i in range(nseason):
+             if statusbar is not None:
+@@ -1573,9 +1573,9 @@
+             tmp, w = tmp
+             tmp2 = numpy.ma.getmask(tmp)
+             if tmp2 is None:
+-                tmp2 = numpy.ones(tmp.shape, dtype=numpy.float) * w
++                tmp2 = numpy.ones(tmp.shape, dtype=float) * w
+             else:
+-                tmp2 = tmp2.astype(MV2.float)
++                tmp2 = tmp2.astype(float)
+                 tmp2 = (1. - tmp2) * w
+             tim = tmp.getTime()
+             tim.getBounds()
