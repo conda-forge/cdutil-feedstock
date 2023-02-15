@@ -125,3 +125,24 @@ diff -ruN cdutil-8.2.1/cdutil/times.py cdutil-8.2.1-patch/cdutil/times.py
                  tmp2 = (1. - tmp2) * w
              tim = tmp.getTime()
              tim.getBounds()
+diff -ruN cdutil-8.2.1/cdutil/vertical.py cdutil-8.2.1-patch/cdutil/vertical.py
+--- cdutil-8.2.1/cdutil/vertical.py	2020-07-17 15:17:48.000000000 -0600
++++ cdutil-8.2.1-patch/cdutil/vertical.py	2023-02-15 15:01:49.007062551 -0700
+@@ -103,7 +103,7 @@
+         if status is not None:
+             prev = genutil.statusbar(ilev, nlev - 1., prev)
+         lev = levels[ilev]  # get value for the level
+-        Iabv = MV2.ones(sh2, MV2.float)
++        Iabv = MV2.ones(sh2, float)
+         Aabv = -1 * Iabv  # Array on sigma level Above
+         Abel = -1 * Iabv  # Array on sigma level Below
+         Ibel = -1 * Iabv  # Pressure on sigma level Below
+@@ -218,7 +218,7 @@
+         if status is not None:
+             prev = genutil.statusbar(ilev, nlev - 1., prev)
+         lev = levels[ilev]  # get value for the level
+-        Pabv = MV2.ones(sh2, MV2.float)
++        Pabv = MV2.ones(sh2, float)
+         Aabv = -1 * Pabv  # Array on sigma level Above
+         Abel = -1 * Pabv  # Array on sigma level Below
+         Pbel = -1 * Pabv  # Pressure on sigma level Below
