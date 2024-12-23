@@ -13,23 +13,25 @@ source:
       - 0002-remove-numpy-mv2-float.patch
 
 build:
-  number: 4
+  number: 5
   noarch: python
-  script: python setup.py install
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   host:
-    - python >=3.6
+    - python {{ python_min }}
     - pip
     - setuptools
     - cdat_info
   run:
-    - python >=3.6
+    - python >={{ python_min }}
     - cdms2
     - genutil
     - cdat_info
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - cdutil
 
